@@ -1,58 +1,43 @@
-# Viewsaurus by Twilio
+# Viewsaurus
 
-Viewsaurus helps you create awesome code walkthroughs for your open source projects. It's like view source, but 84% more awesome.
+A Viewsaurus is an interactive tutorial for documentation portals.
 
-# Authoring Tutorials with Viewsaurus
+[Demo](https://melissakendall.github.io/viewsaurus/index.html)
 
-If you have to use this [viewsaurus](https://www.npmjs.com/package/viewsaurus),
-here are the instructions to set it up.
+# Getting Started
 
-## Assumptions
+## Before You Begin
 
-You have installed [Node.js](https://nodejs.org/en/).
+* Install [Node.js](https://nodejs.org/en/).
 
 ## Steps
- 1. Install [viewsaurus](https://www.npmjs.com/package/viewsaurus) package
 
-   ```bash
-   $ npm install viewsaurus -g
-   ```
- 1. Open your tutorial directory
+1. Fork this repo
+2. Clone your forked repo - `git clone git@github.com:{yourusername}/viewsaurus.git`
+3. Open your directory - `cd viewsaurus`
+4. Install [viewsaurus](https://www.npmjs.com/package/viewsaurus) globally - `npm install viewsaurus -g`
+5. Start the tutorial locally - `saurus author`
+6. View the tutorial at [http://localhost:8080](http://localhost:8080)
 
-   ```bash
-   $ cd path/to/your/repo
-   ```
- 1. Checkout a new branch `gh-pages`, if it doesn't exist of course :wink:
+## Making Your Own
 
-   ```bash
-   $ git checkout -b gh-pages
-   ```
- 1. Start the tutorial from scratch
+To make your own tutorial, follow these instructions.
 
-   ```bash
-   $ saurus new
-   ```
- 1. Authoring the tutorial
-
-   ```bash
-   $ saurus author
-   ```
- 1. Visit [http://localhost:8080](http://localhost:8080) to see the tutorial in
-   action.
-
-### Notes
-
-* Edit `tutorial/config.json` as appropriate for the project.
-* Update `tutorial/index.jade` as needed.
+1. Check out master - `git checkout master`
+2. Edit `tutorial/config.json`
+3. Start the tutorial from scratch - `saurus new`
+4. Start the tutorial locally - `saurus author`
+5. View the tutorial at [http://localhost:8080](http://localhost:8080)
+6. Make changes to `tutorial/index.jade` as desired
 
 ---
 
-**See Also**
+## Resources
 
 * [Installing Node.js](https://docs.npmjs.com/getting-started/installing-node)
 * [Jade Template Engine](http://jade-lang.com/)
 * [Mastering Markdown](https://guides.github.com/features/mastering-markdown/)
-
+* [Viewsaurus](https://www.npmjs.com/package/viewsaurus)
 
 ## License
 
