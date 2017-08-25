@@ -1,0 +1,14 @@
+.chapter(data-title='Viewsaurus Tutorial')
+  .step(data-title='Welcome!', data-file='tutorial/config.json')
+    h2 Welcome!
+
+    p Today we will learn about Viewsaurus!
+
+    p The tutorial's navigation controls are located above this text. Use <i class="fa fa-fw fa-play"></i> to move to the next step of the tutorial. Use <i class="fa fa-fw fa-play fa-rotate-180"></i> to move to the previous step of the tutorial (if there is one). Use <i class="fa fa-fw fa-list"></i> to see an overview of all the steps in the tutorial.
+
+  .step(data-title='Second Step!', data-file='config.json', data-highlight='1')
+    :markdown
+      ## This is a step I am authoring in markdown
+
+  .step(data-title='Third Step!', data-file='config.json', data-mode="csharp")
+    p This step uses a C# file in the viewer!

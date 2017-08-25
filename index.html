@@ -1,0 +1,45 @@
+<!DOCTYPE html><html><head><title>Viewsaurus Tutorial</title><style>body, html {
+  height:100%;
+  width:100%;
+  padding:0;
+  margin:0;
+  overflow:hidden;
+  background-color:#ddd;
+}
+.wrapper {
+  height:100%;
+  width:100%;
+}</style><link rel="shortcut icon" href="//twilio.com/bundles/marketing/img/favicons/favicon.ico"><link rel="apple-touch-icon" href="//twilio.com/bundles/marketing/img/favicons/favicon_57.png"><link rel="apple-touch-icon" sizes="72x72" href="//twilio.com/bundles/marketing/img/favicons/favicon_72.png"><link rel="apple-touch-icon" sizes="114x114" href="//twilio.com/bundles/marketing/img/favicons/favicon_114.png"><link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"><link rel="stylesheet" href="viewsaurus.css"></head><body><div class="wrapper"><div id="viewsaurus" data-title="Viewsaurus Tutorial"><div class="saurus-panes"><div class="saurus-prose"><div class="saurus-prose-header"><div class="title-outer"><span class="step-title">Viewsaurus Tutorial</span></div></div><div class="saurus-nav-buttons"><div class="saurus-nav-button nav-overview"><div class="saurus-nav-button-inner"><i class="fa fa-fw fa-list"></i></div><div class="nav-divider"></div></div><div class="saurus-nav-button nav-previous"><div class="saurus-nav-button-inner"><a href=""> <i class="fa fa-fw fa-play fa-rotate-180"></i></a></div><div class="nav-divider"></div></div><div class="saurus-nav-button nav-next clickable"><div class="saurus-nav-button-inner"><a href="#1"> <i class="fa fa-fw fa-play"></i></a></div></div><div class="saurus-next-title"><span class="next-title-inner"></span></div></div><div class="saurus-progress-bar"></div><div class="saurus-start"><p>Learn how to make a Viewsaurus interactive tutorial</p><a href="#0">Start Tutorial</a></div><div class="saurus-content"><div data-title="Viewsaurus Tutorial" class="chapter"><div data-title="Welcome!" data-file="tutorial/config.json" class="step"><h2>Welcome!</h2><p>Today we will learn about Viewsaurus!</p><p>The tutorial's navigation controls are located above this text. Use <i class="fa fa-fw fa-play"></i> to move to the next step of the tutorial. Use <i class="fa fa-fw fa-play fa-rotate-180"></i> to move to the previous step of the tutorial (if there is one). Use <i class="fa fa-fw fa-list"></i> to see an overview of all the steps in the tutorial.</p><h3>Before You Begin</h3><p>Before you can begin, this guide assumes you have working knowledge of:</p><li><a href="https://nodejs.org/en/">Node.js</a></li><li><a href="http://jade-lang.com/">Jade Templating</a></li><li><a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">Markdown</a></li></div><div data-title="Creating Your First Viewsaurus!" class="step"><h2 id="creating-your-first-viewsaurus">Creating Your First Viewsaurus</h2>
+<p>First, create a folder and <code>cd</code> using a command prompt into the folder.</p>
+<p>Next, install Viewsaurus as a global npm package</p>
+<p><code>npm install viewsaurus -g</code></p>
+<p>Now we can instantiate a new viewsaurus!</p>
+<p><code>saurus new (-p fileloc) (-t title) (-r repo) (-B bool)</code></p>
+<p>The <strong>optional</strong> parameters allow you to specify:</p>
+<ul>
+<li><code>-p fileloc</code> - location to create viewsaurus, defaults to current location, example: <code>c:\test\testingproj</code></li>
+<li><code>-t title</code> - title of your tutorial, example: <code>Tutorial Test</code></li>
+<li><code>-r repo</code> - github username/repo for the project, example: <code>melissakendall/tutorialtest</code></li>
+<li><code>-B bool</code> - flag to indicate if project supports instant deployment with the &quot;Heroku Button&quot; example: <code>false</code></li>
+</ul>
+<p>With a viewsaurus created, we can deploy it.</p>
+<p><code>saurus author (-P PORT) (-p fileloc)</code></p>
+<ul>
+<li><code>-p PORT</code> is optional and allows you to specify a port other then the default of 8080</li>
+<li><code>-P fileloc</code> is optional and allows you to provide a different location to serve from, i.e. <code>c:\test\testingproj</code></li>
+</ul>
+<p>With author running, we can load up the viewsaurus in a web browser: <a href="http://localhost:8080/">http://localhost:8080/</a></p>
+<p>If you specified a different value for PORT in the previous step, modify the URL as appropriate.</p>
+</div><div data-title="Configuration File" data-file="tutorial/config.json" class="step"><h2 id="configuration-file">Configuration File</h2>
+<p>The first thing we will do is look at <code>config.json</code></p>
+<ul>
+<li><code>title</code> will appear in the top left hand corner of the screen</li>
+<li><code>description</code> will appear when you go to URL/ (with a button to begin tutorial)</li>
+<li><code>repo</code> will provide a link in the right hand sidebar to view the code on github</li>
+<li><code>heroku</code> is a flag to indiciate if this tutorial will support instant deployment to Heroku</li>
+</ul>
+</div><div data-title="Editing" data-file="tutorial/first.jade" class="step"><h2>Editing</h2><p>Now that we have a viewsaurus up and running, open up <code>index.jade</code> replace it with the contents of the panel to the right.</p></div><div data-title="Chapter" data-file="tutorial/first.jade" data-highlight="1" class="step"><h2>Chapter</h2><p>Each chapter will begin with a line like this, where <code>data-title</code> has the title name.</p></div><div data-title="Step" data-file="tutorial/first.jade" data-highlight="2" class="step"><h2>Step</h2><p>Each step in the tutorial will begin with this line, where <code>data-file</code> links to the file to be displayed in the left pane. </p></div><div data-title="Content" data-file="tutorial/first.jade" data-highlight="3-7" class="step"><h2>Content</h2><p>Now we can see the content, which uses Jade formatting.</p></div><div data-title="Blurring Lines" data-file="tutorial/first.jade" data-highlight="9" class="step"><h2>Blurring</h2><p>If you want to blur lines, like we have been doing so far, you can use <code>data-highlight</code>.</p></div><div data-title="Markdown Content" data-file="tutorial/first.jade" data-highlight="10-11" class="step"><h2>Markdown</h2><Want>to write in markdown instead? Go ahead, using the <code>:markdown</code> format!</Want></div><div data-title="Syntax Highlighting" data-file="tutorial/first.jade" data-highlight="13-14" class="step"><h2>Syntax Highlighting</h2><p>What if we want to show a different file, like a C# file? You can do that! Check out the <code>data-mode</code> property.</p></div></div>
+<div class="saurus-files" style="display:none;"><textarea class="saurus-file" data-file="tutorial/config.json" data-mode="json">ewogICAgInRpdGxlIjogIlZpZXdzYXVydXMgVHV0b3JpYWwiLAogICAgImRlc2NyaXB0aW9uIjogIkxlYXJuIGhvdyB0byBtYWtlIGEgVmlld3NhdXJ1cyBpbnRlcmFjdGl2ZSB0dXRvcmlhbCIsCiAgICAicmVwbyI6ICJtZWxpc3Nha2VuZGFsbC9pbnRlcmFjdGl2ZS10dXRvcmlhbCIsCiAgICAiaGVyb2t1IjogZmFsc2UKfQ==</textarea>
+<textarea class="saurus-file" data-file="tutorial/first.jade" data-mode="jade">LmNoYXB0ZXIoZGF0YS10aXRsZT0nVmlld3NhdXJ1cyBUdXRvcmlhbCcpDQogIC5zdGVwKGRhdGEtdGl0bGU9J1dlbGNvbWUhJywgZGF0YS1maWxlPSd0dXRvcmlhbC9jb25maWcuanNvbicpDQogICAgaDIgV2VsY29tZSENCg0KICAgIHAgVG9kYXkgd2Ugd2lsbCBsZWFybiBhYm91dCBWaWV3c2F1cnVzIQ0KDQogICAgcCBUaGUgdHV0b3JpYWwncyBuYXZpZ2F0aW9uIGNvbnRyb2xzIGFyZSBsb2NhdGVkIGFib3ZlIHRoaXMgdGV4dC4gVXNlIDxpIGNsYXNzPSJmYSBmYS1mdyBmYS1wbGF5Ij48L2k+IHRvIG1vdmUgdG8gdGhlIG5leHQgc3RlcCBvZiB0aGUgdHV0b3JpYWwuIFVzZSA8aSBjbGFzcz0iZmEgZmEtZncgZmEtcGxheSBmYS1yb3RhdGUtMTgwIj48L2k+IHRvIG1vdmUgdG8gdGhlIHByZXZpb3VzIHN0ZXAgb2YgdGhlIHR1dG9yaWFsIChpZiB0aGVyZSBpcyBvbmUpLiBVc2UgPGkgY2xhc3M9ImZhIGZhLWZ3IGZhLWxpc3QiPjwvaT4gdG8gc2VlIGFuIG92ZXJ2aWV3IG9mIGFsbCB0aGUgc3RlcHMgaW4gdGhlIHR1dG9yaWFsLg0KDQogIC5zdGVwKGRhdGEtdGl0bGU9J1NlY29uZCBTdGVwIScsIGRhdGEtZmlsZT0nY29uZmlnLmpzb24nLCBkYXRhLWhpZ2hsaWdodD0nMScpDQogICAgOm1hcmtkb3duDQogICAgICAjIyBUaGlzIGlzIGEgc3RlcCBJIGFtIGF1dGhvcmluZyBpbiBtYXJrZG93bg0KDQogIC5zdGVwKGRhdGEtdGl0bGU9J1RoaXJkIFN0ZXAhJywgZGF0YS1maWxlPSdjb25maWcuanNvbicsIGRhdGEtbW9kZT0iY3NoYXJwIikNCiAgICBwIFRoaXMgc3RlcCB1c2VzIGEgQyMgZmlsZSBpbiB0aGUgdmlld2VyIQ==</textarea>
+</div>
+</div><div class="saurus-overview"><ul></ul></div></div><div class="saurus-code"><div class="file-path"><span class="crumb-container"></span><i class="fa fa-fw fa-folder"></i></div><div class="saurus-editor"></div></div><div class="saurus-explorer"><div class="saurus-file-list"></div><a href="https://github.com/melissakendall/interactive-tutorial" target="_blank" class="explorer-get-code"> <i class="fa fa-lg fa-github-square"> </i>View Code on GitHub</a></div></div></div></div><script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script><script src="ace/ace.js"></script><script src="ace/theme-monokai.js"></script><script src="viewsaurus.js"></script></body></html>

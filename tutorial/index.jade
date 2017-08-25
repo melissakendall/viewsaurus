@@ -1,0 +1,92 @@
+.chapter(data-title='Viewsaurus Tutorial')
+  .step(data-title='Welcome!', data-file='tutorial/config.json')
+    h2 Welcome!
+
+    p Today we will learn about Viewsaurus!
+
+    p The tutorial's navigation controls are located above this text. Use <i class="fa fa-fw fa-play"></i> to move to the next step of the tutorial. Use <i class="fa fa-fw fa-play fa-rotate-180"></i> to move to the previous step of the tutorial (if there is one). Use <i class="fa fa-fw fa-list"></i> to see an overview of all the steps in the tutorial.
+
+    h3 Before You Begin
+
+    p Before you can begin, this guide assumes you have working knowledge of:
+
+    li <a href="https://nodejs.org/en/">Node.js</a>
+    li <a href="http://jade-lang.com/">Jade Templating</a>
+    li <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">Markdown</a>
+
+  .step(data-title='Creating Your First Viewsaurus!')
+    :markdown
+      ## Creating Your First Viewsaurus
+
+      First, create a folder and `cd` using a command prompt into the folder.
+
+      Next, install Viewsaurus as a global npm package
+
+      ```npm install viewsaurus -g```
+
+      Now we can instantiate a new viewsaurus!
+      
+      ```saurus new (-p fileloc) (-t title) (-r repo) (-B bool)```
+
+      The **optional** parameters allow you to specify:
+
+      * `-p fileloc` - location to create viewsaurus, defaults to current location, example: `c:\test\testingproj`
+      * `-t title` - title of your tutorial, example: `Tutorial Test`
+      * `-r repo` - github username/repo for the project, example: `melissakendall/tutorialtest`
+      * `-B bool` - flag to indicate if project supports instant deployment with the "Heroku Button" example: `false`
+
+      With a viewsaurus created, we can deploy it.
+
+      ```saurus author (-P PORT) (-p fileloc)```
+
+      * `-p PORT` is optional and allows you to specify a port other then the default of 8080
+      * `-P fileloc` is optional and allows you to provide a different location to serve from, i.e. `c:\test\testingproj`
+
+      With author running, we can load up the viewsaurus in a web browser: http://localhost:8080/
+
+      If you specified a different value for PORT in the previous step, modify the URL as appropriate.
+
+  .step(data-title='Configuration File', data-file='tutorial/config.json')
+    :markdown
+      ## Configuration File
+
+      The first thing we will do is look at `config.json`
+      * `title` will appear in the top left hand corner of the screen
+      * `description` will appear when you go to URL/ (with a button to begin tutorial)
+      * `repo` will provide a link in the right hand sidebar to view the code on github
+      * `heroku` is a flag to indiciate if this tutorial will support instant deployment to Heroku
+
+  .step(data-title='Editing', data-file='tutorial/first.jade')
+    h2 Editing
+
+    p Now that we have a viewsaurus up and running, open up <code>index.jade</code> replace it with the contents of the panel to the right.
+
+  .step(data-title='Chapter', data-file='tutorial/first.jade', data-highlight="1")
+    h2 Chapter
+
+    p Each chapter will begin with a line like this, where <code>data-title</code> has the title name.
+
+  .step(data-title='Step', data-file='tutorial/first.jade', data-highlight="2")
+    h2 Step
+
+    p Each step in the tutorial will begin with this line, where <code>data-file</code> links to the file to be displayed in the left pane. 
+
+  .step(data-title='Content', data-file='tutorial/first.jade' data-highlight="3-7")
+    h2 Content
+
+    p Now we can see the content, which uses Jade formatting.
+
+  .step(data-title='Blurring Lines', data-file='tutorial/first.jade' data-highlight="9")
+    h2 Blurring
+
+    p If you want to blur lines, like we have been doing so far, you can use <code>data-highlight</code>.
+
+  .step(data-title='Markdown Content', data-file='tutorial/first.jade' data-highlight="10-11")
+    h2 Markdown
+
+    Want to write in markdown instead? Go ahead, using the <code>:markdown</code> format!
+
+  .step(data-title='Syntax Highlighting', data-file='tutorial/first.jade' data-highlight="13-14")
+    h2 Syntax Highlighting
+
+    p What if we want to show a different file, like a C# file? You can do that! Check out the <code>data-mode</code> property.
